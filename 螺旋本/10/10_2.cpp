@@ -2,9 +2,9 @@
 using namespace std;
 #define MAX 100000
 
-int parent(int i){return i /2}
-int left(int i){return 2*i}
-int right(int i){return 2*i + 1}
+int parent(int i){return i /2;};
+int left(int i){return 2*i;};
+int right(int i){return 2*i + 1;};
 
 int main(){
     int H,i,A[MAX+1];

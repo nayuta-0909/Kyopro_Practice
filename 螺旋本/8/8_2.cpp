@@ -18,13 +18,13 @@ void print(int u){
     else if(T[u].l==NIL) cout<<"leaf,";
     else cout << "internal node,";
     
-    cout << "["
+    cout << "[";
 
-    for(i=0;c=T[u].l;c != NIL;i++,c=T[c].r){
+    for(i=0 ,c=T[u].l ;c != NIL ; i++,c=T[c].r){
         if(i) cout <<",";
         cout << c;
     }
-    cout << "j" << endl;
+    cout << "]" << endl;
 }
 
 int rec(int u,int p){

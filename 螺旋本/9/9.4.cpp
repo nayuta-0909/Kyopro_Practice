@@ -46,6 +46,7 @@ Node *treeSuccessor(Node *x) {
 
 // ノードを削除する関数
 void treeDelete(Node *z) {
+    //z:二分探索木から削除されるノード
     Node *y; // 削除するか、移動するノードを指す
     Node *x; // yの子ノードを指す
 

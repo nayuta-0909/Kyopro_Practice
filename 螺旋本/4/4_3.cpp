@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <string.h>
-#define LEN 100005
+#define len 100005
 
 typedef struct pp{
     char name[100];
     int t;
-}P;
+}p;
 
-P Q [LEN];
+p q [len];
 int head,tail,n;
 
-void enqueue(P x){
-    Q[tail] = x;
-    tail = (tail+1)%LEN;
+void enqueue(p x){
+    q[tail] = x;
+    tail = (tail+1)%len;
 }
 
-P dequeue(){
-    P x = Q[head];
-    head = (head+1)%LEN;
+p dequeue(){
+    p x = q[head];
+    head = (head+1)%len;
     return x;
 }
 
@@ -28,12 +28,12 @@ int min(int a,int b){
 int main(){
     int elaps = 0,c;
     int i,q;
-    P u;
+    p u;
     scanf("%d %d",&n,&q);
 
-    for(i=1;i<=n;i++){
-        scanf("%s",Q[i].name);
-        scanf("%d",&Q[i].t);
+    for(int i=1; i<=n;i++){
+        scanf("%s",q[i].name);
+        scanf("%d",&q[i].t);
     }
 
     head = 1,tail=n+1;
