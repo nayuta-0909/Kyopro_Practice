@@ -42,6 +42,13 @@ int rec(int u, int p) {
 }
 
 int main() {
+    /*
+    i,j:ループに使う
+    d:ノードの子供の数
+    v:ノード番号
+    c:子ノードの番号
+    l,r:左右の子
+    */
     int i, j, d, v, c, l, r;
 
     // ノード数の入力

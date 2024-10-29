@@ -46,10 +46,10 @@ void insert(int k) {
     }
     /////////////////////////////////
 
-    // 挿入
-    z->parent = y;        // 新しいノードzの親をyに設定
+    // 挿入 /////////////////////////////////
+    z->parent = y;        // 挿入する値の親を設定
 
-    if (y == NIL) {       // 木が空の場合、新しいノードzを根にする
+    if (y == NIL) {       // 初めの入力なら新しいノードzを根にする
         root = z;
     }
     else {
@@ -61,4 +61,39 @@ void insert(int k) {
         }
     }
     /////////////////////////////////
+}
+
+void inorder(Node *u) {
+    if(u==NIL) return;
+    inorder(u->left);
+    printf("%d", u->key);
+    inorder(u->left);
+}
+
+void preorder(Node *u){
+    if(u==NIL) return;
+    printf("%d" ,u->key);
+    preorder(u->left);
+    preorder(u->right);
+}
+
+int main() {
+    /**
+     * n:繰り返す回数
+     * x:挿入する数値
+     */
+    int n,x;
+    string com;
+
+    scanf("%d", &n);
+
+    for(int i=0;i<n;i++){
+        cin >> com;
+        if(com== "insert"){ 
+            scanf("%d", &x);
+            insert(x);
+        } else if(com == "print"){
+            printf("\n");
+        }
+    }
 }

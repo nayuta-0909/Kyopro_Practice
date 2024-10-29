@@ -66,13 +66,20 @@ void insert(int k) {
     /////////////////////////////////
 }
 
-void inorder(Node *u){
-
+void inorder(Node *u) {
+    if(u==NIL) return;
+    inorder(u->left);
+    printf("%d", u->key);
+    inorder(u->left);
 }
 
 void preorder(Node *u){
-
+    if(u==NIL) return;
+    printf("%d" ,u->key);
+    preorder(u->left);
+    preorder(u->right);
 }
+
 
 
 int main(){

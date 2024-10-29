@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <iostream>
+using namespace std;
 #define MAX 10000  // 最大ノード数
 #define NIL -1     // 存在しないノードを示す定義
 
@@ -12,6 +14,7 @@ int n, D[MAX], H[MAX]; // ノード数、深さ、及び高さの配列
 
 // 深さを設定する関数
 void setDepth(int u, int d) {
+    //u:ノード, d:深さ
     if (u == NIL) return; // ノードが存在しない場合は終了
     D[u] = d; // 深さを設定
     setDepth(T[u].left, d + 1); // 左の子ノードの深さを設定
