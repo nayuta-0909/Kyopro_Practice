@@ -14,6 +14,7 @@ void dijkstra() {
     int minv;
     int d[MAX], color[MAX]; // 各ノードの最短距離dとノードの状態を示すcolor
 
+    //初期化
     for (int i = 0; i < n; i++) {
         d[i] = INFTY; // 最短距離を無限大に初期化
         color[i] = WHITE; // ノードの色を未訪問に初期化

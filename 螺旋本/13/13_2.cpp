@@ -14,6 +14,7 @@ int prim() {
     int u, minv;
     int d[MAX], p[MAX], color[MAX]; // 各ノードの最短距離d、前のノードp、色を格納するcolor
 
+    //初期化
     for (int i = 0; i < n; i++) {
         d[i] = INFTY; // 初期化: 全てのノードの距離を無限大に
         p[i] = -1; // 前のノードを初期化
@@ -21,6 +22,7 @@ int prim() {
     }
     d[0] = 0; // 最初のノードの距離を0に
 
+    //最短距離のループ
     while (1) {
         minv = INFTY;
         u = -1;

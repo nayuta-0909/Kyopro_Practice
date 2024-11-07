@@ -1,6 +1,7 @@
-#include <iostream>  // 標準入出力用のライブラリ
-#include <queue>     // キューを使うためのライブラリ
+//幅優先探索
 
+#include <iostream>  
+#include <queue>
 using namespace std;
 
 static const int N = 100;  // 頂点の最大数を100に設定
@@ -39,6 +40,9 @@ void bfs(int s) {
 }
 
 int main() {
+    //u:頂点
+    //k:頂点uの隣接頂点の数
+    //v:隣接する頂点
     int u, k, v;
 
     cin >> n;  // 頂点数nを入力

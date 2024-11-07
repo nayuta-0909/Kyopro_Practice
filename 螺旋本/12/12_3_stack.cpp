@@ -1,3 +1,5 @@
+//深さ優先探索
+
 #include <iostream>   
 #include <stack>      
 using namespace std;
@@ -11,16 +13,18 @@ int n, M[N][N];    // n: 頂点数, M: 隣接行列（頂点間の接続関係�
 int color[N], d[N], f[N], tt; // color: 頂点の訪問状態, d: 発見時刻, f: 完了時刻, tt: 時刻カウンタ
 int nt[N];         // nt: 次に探索する隣接頂点のインデックス
 
-// uに隣接するvを番号順に取得する関数
+// 頂点uに隣接するvを番号順に取得する関数
+//u:頂点
 int next(int u) {
     for (int v = nt[u]; v < n; v++) {  // uの隣接頂点vを順番に探索
-        nt[u] = v + 1;  // 次の探索対象インデックスを更新
+        nt[u] = v + 1;  // 次の探索対象インデックスを更新(処理時間を節約する)
         if (M[u][v]) return v;  // 隣接している頂点が見つかれば、その頂点を返す
     }
     return -1;  // 隣接する頂点がない場合は-1を返す
 }
 
 // スタックを用いた深さ優先探索
+//r:頂点
 void dfs_visit(int r) {
     for (int i = 0; i < n; i++) nt[i] = 0;  // 隣接頂点探索のためにnt配列を初期化
 
@@ -67,6 +71,9 @@ void dfs() {
 }
 
 int main() {
+    //u:頂点
+    //k:頂点uの隣接頂点の数
+    //v:隣接する頂点
     int u, k, v;
 
     cin >> n;  // 頂点数nを入力
